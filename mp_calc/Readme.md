@@ -258,7 +258,7 @@ def users():
 - `users = User.query.all()` retrieves all users from the database in `User` table (`User` is defined in `models.py`). 
 - `mergesort(users, lambda item: item.username)` calls the sorting function to sort the list of users using its `username` attribute. Note that the `User` table has other attributes besides `username`. Refer to `models.py` for all the attributes of `User` table. It should sort the `users` in place. You need to modify your `mergesort()` function as described in **Q1** of `mp2_exercises.ipynb` to complete this. 
 - `usernames = [u.username for u in users]` creates a list of usernames from the list of sorted users. 
-- In the last line, `render_template('users.html', title='Users', users=usernames)`, we pass the variable `usernames` to be used in the `users.html` using some jinja templating under the name `users`.
+- In the last line, `render_template('users.html', title='Users', users=usernames)`, we pass the variable `username` to be used in the `users.html` using some jinja templating under the name `users`.
 
 
 This file `users.html` can be found inside the `templates` folder.
@@ -299,7 +299,7 @@ Let's open `users.html`. The first few lines are shown here.
 <h1>This Platform's Users</h1>
 ```
 
-- The first line `{% extends "base.html" %}` inherits the `base.html` for some of the common elements such as the navigation bar, importing certain scripts, and CSS files. The javascript which we will translate from the file `serverlibrary.py` is imported in the last few lines of `base.html`.
+- The first line `{% extends "base.html" %}` inherits the `base.html` for some of the common elements such as the navigation bar, importing certain scripts, and CSS files. The javascript which we will transalte from the file `serverlibrary.py` is imported in the last few lines of `base.html`.
 - The second line indicates the block `app_content`. Each html file templates we have will modify this block `app_content`. 
 
 This file basically iterates over all users and create rows of users in a table. The table body code is shown below.
